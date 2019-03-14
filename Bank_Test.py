@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-
 import pandas as pd
 import matplotlib.pyplot as plt
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 
 dataset = pd.read_csv("csv/boolean_bank_test.csv", sep=',').to_numpy()
 

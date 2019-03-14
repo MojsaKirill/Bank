@@ -1,7 +1,6 @@
 import numpy
 import pandas as pd
-from keras import Sequential
-from keras.layers import LSTM, Dense
+import tensorflow as tf
 
 dataset = pd.read_csv("csv/boolean_bank.csv", sep=',').to_numpy()
 
@@ -11,10 +10,9 @@ X, Y = dataset[:, 0:20], dataset[:, 20]
 
 X = X.reshape((X.shape[0], 1, X.shape[1]))
 
-model = Sequential()
-model.add(LSTM(128, input_shape=(X.shape[1], X.shape[2])))
-model.add(Dense(1, activation='sigmoid', kernel_initializer='random_uniform'))
-
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.LSTM(128, input_shape=(X.shape[1], X.shape[2])))
+model.add(tf.keras.layers.Dense(1, activation='sigmoid', kernel_initializer='random_uniform'))
 model.compile(loss="binary_crossentropy", optimizer="adam", metrics=['accuracy'])
 
 model.fit(X, Y, epochs=1000, batch_size=32)
