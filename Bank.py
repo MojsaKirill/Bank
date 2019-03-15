@@ -15,7 +15,7 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid', kernel_initializer='ran
 
 model.compile(loss="binary_crossentropy", optimizer="adam", metrics=['accuracy'])
 
-model.fit(X, Y, epochs=20, batch_size=32)
+model.fit(X, Y, epochs=1000, batch_size=8192, verbose=1)
 
 scores = model.evaluate(X, Y)
 print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1] * 100))
