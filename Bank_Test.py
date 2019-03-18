@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 
-dataset = pd.read_csv("csv/boolean_bank_test2.csv", sep=',').to_numpy()
+dataset = pd.read_csv("csv/boolean_bank_test.csv", sep=',').to_numpy()
 
 X, Y = dataset[:, 0:22], dataset[:, 22]
 
