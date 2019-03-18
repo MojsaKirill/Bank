@@ -2,7 +2,7 @@ import numpy
 
 import pandas as pd
 
-#age, married, signal, divorced, primary, secondary, tertiary, default(0-1),balance,housing(0-1),loan(0-1), celluar, telephone, duration, campaign, pdays, previous
+#age, married, signal, divorced, primary, secondary, tertiary, default(0-1),balance(<500),balance(500-200,balance(>2000),housing(0-1),loan(0-1), celluar, telephone, duration, campaign, pdays, previous
 #failure, other, success, y
 
 dataset = pd.read_csv("csv/bank.csv", sep=',').to_numpy()
