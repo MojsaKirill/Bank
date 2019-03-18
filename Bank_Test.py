@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 
-dataset = pd.read_csv("csv/boolean_bank_test.csv", sep=',').to_numpy()
+dataset = pd.read_csv("csv/boolean_bank_test2.csv", sep=',').to_numpy()
 
-X, Y = dataset[:, 0:20], dataset[:, 20]
+X, Y = dataset[:, 0:22], dataset[:, 22]
 
 loss_dir = ['loss_positive', 'loss_negative', 'all', "correct"]
 
@@ -54,4 +54,3 @@ plt.subplot(132)
 plt.title('LSTM')
 plt.bar(loss_dir, loss_lstm)
 plt.show()
-plt.savefig("fig")
